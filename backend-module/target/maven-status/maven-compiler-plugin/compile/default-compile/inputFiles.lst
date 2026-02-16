@@ -1,0 +1,6 @@
+/home/darlison/Projects/studySmart/bip-teste-integrado/backend-module/src/main/java/com/example/backend/BackendApplication.java
+/home/darlison/Projects/studySmart/bip-teste-integrado/backend-module/src/main/java/com/example/backend/exceptions/GlobalExceptionHandler.java
+/home/darlison/Projects/studySmart/bip-teste-integrado/backend-module/src/main/java/com/example/backend/dtos/TransferResponse.java
+/home/darlison/Projects/studySmart/bip-teste-integrado/backend-module/src/main/java/com/example/backend/BeneficioController.java
+/home/darlison/Projects/studySmart/bip-teste-integrado/backend-module/src/main/java/com/example/backend/dtos/ErrorDTO.java
+/home/darlison/Projects/studySmart/bip-teste-integrado/backend-module/src/main/java/com/example/backend/dtos/TransferDTO.java

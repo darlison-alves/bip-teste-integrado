@@ -3,12 +3,14 @@ package com.example.backend;
 import com.example.backend.dtos.TransferDTO;
 import com.example.backend.dtos.TransferResponse;
 import com.example.ejb.BeneficioEjbService;
+import com.example.ejb.domain.models.Beneficio;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.*;
 
+@CrossOrigin("*")
 @RestController
 @RequestMapping("/api/v1/beneficios")
 public class BeneficioController {
@@ -16,8 +18,8 @@ public class BeneficioController {
     BeneficioEjbService beneficioEjbService;
 
     @GetMapping
-    public List<String> list() {
-        return Arrays.asList("Beneficio A", "Beneficio B");
+    public List<Beneficio> list() {
+        return beneficioEjbService.findAll();
     }
 
     @PostMapping("/transfer")

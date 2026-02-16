@@ -1,0 +1,7 @@
+/home/darlison/Projects/studySmart/bip-teste-integrado/ejb-module/src/main/java/com/example/ejb/domain/exceptions/NotFountException.java
+/home/darlison/Projects/studySmart/bip-teste-integrado/ejb-module/src/main/java/com/example/ejb/domain/repositories/IBeneficioRepository.java
+/home/darlison/Projects/studySmart/bip-teste-integrado/ejb-module/src/main/java/com/example/ejb/BeneficioEjbService.java
+/home/darlison/Projects/studySmart/bip-teste-integrado/ejb-module/src/main/java/com/example/ejb/domain/exceptions/BaseException.java
+/home/darlison/Projects/studySmart/bip-teste-integrado/ejb-module/src/main/java/com/example/ejb/domain/models/Beneficio.java
+/home/darlison/Projects/studySmart/bip-teste-integrado/ejb-module/src/main/java/com/example/ejb/domain/exceptions/InsufficientBalanceException.java
+/home/darlison/Projects/studySmart/bip-teste-integrado/ejb-module/src/main/java/com/example/ejb/adapter/persistence/BeneficioRepository.java

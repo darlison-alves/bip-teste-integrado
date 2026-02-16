@@ -1,0 +1,7 @@
+com/example/ejb/domain/exceptions/NotFountException.class
+com/example/ejb/domain/exceptions/BaseException.class
+com/example/ejb/adapter/persistence/BeneficioRepository.class
+com/example/ejb/domain/repositories/IBeneficioRepository.class
+com/example/ejb/BeneficioEjbService.class
+com/example/ejb/domain/exceptions/InsufficientBalanceException.class
+com/example/ejb/domain/models/Beneficio.class

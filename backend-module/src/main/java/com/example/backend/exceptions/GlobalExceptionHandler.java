@@ -3,6 +3,8 @@ package com.example.backend.exceptions;
 import com.example.backend.dtos.ErrorDTO;
 import com.example.ejb.domain.exceptions.BaseException;
 import jakarta.servlet.http.HttpServletRequest;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.orm.ObjectOptimisticLockingFailureException;
@@ -11,6 +13,8 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 @RestControllerAdvice
 public class GlobalExceptionHandler {
+
+    private static final Logger log = LoggerFactory.getLogger(GlobalExceptionHandler.class);
 
     @ExceptionHandler(BaseException.class)
     public ResponseEntity<ErrorDTO> handleGeneric(
@@ -43,6 +47,9 @@ public class GlobalExceptionHandler {
             Exception ex,
             HttpServletRequest request
     ) {
+
+        log.error("[LOG ERROR]: {} - STACK: {}",ex.getMessage(), ex.getStackTrace());
+
         return buildResponse(
                 HttpStatus.INTERNAL_SERVER_ERROR,
                 "Internal Server Error",

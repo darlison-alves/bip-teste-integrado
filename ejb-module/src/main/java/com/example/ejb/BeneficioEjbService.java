@@ -7,6 +7,7 @@ import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 @Service
 public class BeneficioEjbService {
@@ -33,5 +34,9 @@ public class BeneficioEjbService {
 
     private Beneficio findBeneficionById(Long id) {
         return this.beneficioRepository.findById(id).orElseThrow(() -> new NotFountException("account not found with id: " + id ));
+    }
+
+    public List<Beneficio> findAll() {
+        return this.beneficioRepository.findAll();
     }
 }
