@@ -1,0 +1,37 @@
+#version: '3.8'
+#services:
+#  wildfly:
+#    image: quay.io/wildfly/wildfly:latest
+#    container_name: wildfly
+#    user: root
+#    command: >
+#      /opt/jboss/wildfly/bin/standalone.sh
+#      -b=0.0.0.0
+#      -bmanagement=0.0.0.0
+#    ports:
+#      - "8080:8080"
+#      - "9990:9990"
+#    environment:
+#      WILDFLY_ADMIN_USER: admin
+#      WILDFLY_ADMIN_PASSWORD: admin123
+#    volumes:
+#      - ./deployments:/opt/jboss/wildfly/standalone/deployments
+#      - ./wildfly-config:/opt/jboss/wildfly/standalone/configuration
+version: '3.8'
+
+services:
+  wildfly:
+    build: .
+    container_name: wildfly
+    user: root
+    ports:
+      - "8080:8080"
+      - "9990:9990"
+    volumes:
+      - wildfly_data:/opt/jboss/wildfly/standalone/data
+      - wildfly_logs:/opt/jboss/wildfly/standalone/log
+
+volumes:
+  wildfly_data:
+  wildfly_logs:
+
