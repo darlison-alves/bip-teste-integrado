@@ -1,0 +1,57 @@
+<div>
+    @if(viewedButton()) {
+    <a href="#" (click)="handleViewTransfer()"
+        class="inline-flex items-center text-body bg-neutral-secondary-medium box-border border border-default-medium hover:bg-neutral-tertiary-medium hover:text-heading shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none">
+        Transferir
+        <svg class="w-4 h-4 ms-1.5 rtl:rotate-180 -me-0.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+            width="24" height="24" fill="none" viewBox="0 0 24 24">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M19 12H5m14 0-4 4m4-4-4-4" />
+        </svg>
+    </a>
+    }
+    @if(viewedForm()) {
+    <div class="flex gap-2 flex-col">
+
+        <label>Para:</label>
+        <select (change)="handleDestination($event)" type="text"
+            class="inline-flex items-center text-body bg-neutral-secondary-medium box-border border border-default-medium hover:bg-neutral-tertiary-medium hover:text-heading shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none">
+            <option value=""></option>
+
+            @for(item of options(); track item.id) {
+                @if(originId() != item.id) {
+                    <option [value]="item.id">{{item.nome}}</option>
+                }
+            }
+
+        </select>
+
+        <div class="flex gap-2">
+            <input placeholder="valor R$" type="text" (change)="handleAmount($event)"
+                class="inline-flex items-center text-body bg-neutral-secondary-medium box-border border border-default-medium hover:bg-neutral-tertiary-medium hover:text-heading shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none" />
+
+            <button [disabled]="loading()" (click)="handleSelected()"
+                class="inline-flex cursor-pointer items-center text-body bg-neutral-secondary-medium box-border border border-default-medium hover:bg-neutral-tertiary-medium hover:text-heading shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none">
+                @if(loading()) {
+                    transferindo...
+                }
+
+                @if(!loading()) {
+                    Enviar
+                }
+
+            </button>
+            <button (click)="handleViewTransferCancel()"
+                class="inline-flex cursor-pointer items-center text-body bg-neutral-secondary-medium box-border border border-default-medium hover:bg-neutral-tertiary-medium hover:text-heading shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none">
+                Cancelar
+            </button>
+        </div>
+
+
+        @if(error()) {
+            <p class="text-red-500">{{error()}}</p>
+        }
+        
+    </div>
+    }
+</div>

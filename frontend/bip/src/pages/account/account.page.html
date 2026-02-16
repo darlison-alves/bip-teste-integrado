@@ -1,0 +1,9 @@
+<h5 class="mb-6 text-2xl ">Lista</h5>
+
+<div class="flex gap-4 flex-wrap">
+    @for(item of accounts(); track item.id) {
+    <div class="content">
+        <bip-card [title]="item.nome" [balance]="item.valor" [accounts]="accounts()" [accountId]="item.id"/>
+    </div>
+    }
+</div>

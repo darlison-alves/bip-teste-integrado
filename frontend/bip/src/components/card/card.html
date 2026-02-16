@@ -1,0 +1,7 @@
+<div class="bg-neutral-primary-soft block max-w-lg p-6 border border-default rounded-base shadow-xs">
+    <a href="#">
+        <h5 class="mt-6 mb-2 text-2xl font-semibold tracking-tight text-heading">{{title()}}</h5>
+    </a>
+    <p class="mb-6 text-body">Saldo em Conta: R$ {{balance()}} </p>
+    <b-transfer [options]="accounts()" [originId]="accountId()" />
+</div>
